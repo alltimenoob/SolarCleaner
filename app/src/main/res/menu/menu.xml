@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+    <group android:id="@+id/calculator">
+        <item android:id="@+id/load_calculator"
+            android:title="Load Calculator"/>
+        <item android:id="@+id/solar_panel_calculator"
+            android:title="Solar-Panel Calculator"/>
+        <item android:id="@+id/solar_panel_battery"
+            android:title="Solar-Panel Battery"/>
+        <item android:id="@+id/solar_panel_off_grid"
+            android:title="Solar-Panel Off-Grid Calculator"/>
+    </group>
+    <group android:id="@+id/profile">
+        <item android:id="@+id/view_profile"
+            android:title="My Profile"/>
+        <item android:id="@+id/logout"
+            android:title="Logout"/>
+    </group>
+</menu>

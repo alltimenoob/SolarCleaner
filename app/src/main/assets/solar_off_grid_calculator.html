@@ -1,0 +1,743 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body class="toolbar-enabled" style="">
+<form method="post" action="./solar-off-grid-calculator" id="MyForm">
+
+
+    <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['MyForm'];
+if (!theForm) {
+    theForm = document.MyForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+    <br>
+    <center><h1 class="btn btn-lg btn-light bike_btn form-control input_finder" style="font-size: 22px!important; padding: 0px!important;">
+        Solar Calculator</h1>
+        <div role="main" class="main shop">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-9">
+                            <br>
+                            <div>
+                                <div class="tabcontents" style="margin-bottom: 20px!important;">
+                                    <div id="view1">
+                                        <div class="panel-body">
+                                            <table valign="bottom" align="center" style="background: #f3f6f8 url('none') repeat scroll 0% 0%;
+                                            padding: 2px 5px; border-width: 0px; border-style: solid;" border="0" cellspacing="3" cellpadding="3" class="nav-justified">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td width="40%">
+                                                        <strong> Appliances</strong>
+                                                    </td>
+                                                    <td>
+                                                        <b>Watts</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>Qty</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>  No. of Hrs for Daily usage in Solar</b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Fans
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_fans" type="text" value="80" id="MainContent_txtpower_fans" onchange="compute()" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txtfans" id="MainContent_txtfans">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailyfans" id="MainContent_dailyfans">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Tubes 40W
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_tubelights" type="text" value="50" id="txtpower_tubelights" onchange="compute()" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txttubelights" id="MainContent_txttubelights">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailytubelights" id="MainContent_dailytubelights">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        LED
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_crt" type="text" value="18" id="txtpower_crt" onchange="compute()" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txtcrt" id="MainContent_txtcrt">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailycrt" id="MainContent_dailycrt">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        TV LCD
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_lcd" type="text" value="90" id="txtpower_lcd" onchange="compute()" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txtlcd" id="MainContent_txtlcd">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailylcd" id="MainContent_dailylcd">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        TV LED
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_led" type="text" value="60" id="txtpower_led" onchange="compute()" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txtled" id="MainContent_txtled">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailyled" id="MainContent_dailyled">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        DTH
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_dth" type="text" value="30" id="txtpower_dth" onchange="compute()" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txtdth" id="MainContent_txtdth">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailydth" id="MainContent_dailydth">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Computer + LCD
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_computer" type="text" value="250" id="txtpower_computer" onchange="compute()" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txtcomputer" id="MainContent_txtcomputer">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailycomputer" id="MainContent_dailycomputer">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Laptop 9 cell
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_laptop" type="text" value="90" id="txtpower_laptop" onchange="compute()" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txtlaptop" id="MainContent_txtlaptop">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailylaptop" id="MainContent_dailylaptop">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Mobile Charger
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_mobile" type="text" value="5" id="MainContent_txtpower_mobile" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txtmobile" id="MainContent_txtmobile">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailymobile" id="MainContent_dailymobile">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Mixie
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$MainContent$txtpower_mixie" type="text" value="500" id="MainContent_txtpower_mixie" size="3">
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$txtmixie" id="MainContent_txtmixie">
+                                                            <option value="0">Quantity</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select name="ctl00$MainContent$dailymixie" id="MainContent_dailymixie">
+                                                            <option value="0">Daily usuage in hours</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <br>
+                                            *For Running AC, Waterheater, Waterpump, we dont suggest to run on Solar, as the
+                                            Solar system will cost 3-4 times higher than the normal one and requires high budget<br>
+                                            <br>
+                                            <p align="center">
+                                                <a id="MainContent_LinkButton2" class="btn btn-lg btn-danger bike_btn form-control input_finder" href="javascript:__doPostBack('ctl00$MainContent$LinkButton2','')" style="padding-top:5px; border-radius:0px;">
+                                                    Click Here to Show Recommendations</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 pull-right battery_input">
+                            <br>
+                            <div class="tabborder" style="margin-bottom: 6px!important;">
+                                <div>
+                                    <div class="btn btn-lg btn-danger bike_btn form-control input_finder">
+                                        Solar Saving's</div>
+                                </div>
+                                <div>
+                                    <table>
+                                        <tbody>
+
+                                        <tr class="cart-subtotal cartbrder">
+                                            <th>
+                                                Total Power Requirements(W)
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <strong><span class="amount h4color">
+                                                    <span id="MainContent_txttotal_power"></span>
+                                                </span></strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="cart-subtotal cartbrder">
+                                            <th>
+                                                <strong>Monthy unit consumption : </strong>
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <strong><span class="amount h4color">
+                                                    <span id="MainContent_Units_Per_Month"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="shipping cartbrder">
+                                            <th>
+                                                Rate of electricity/unit
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <span class="h4color">
+                                                     ₹<span id="MainContent_Tariff">8</span>*
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr class="total ">
+                                            <th>
+                                                <strong>Average Saving's per month : </strong>
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <strong><span class="amount h4color">
+                                                     ₹<span id="MainContent_savings"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="total ">
+                                            <th>
+                                                <strong>Estd. Saving's for 10 Years : </strong>
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <strong><span class="amount h4color">
+                                                     ₹<span id="MainContent_saving10Years"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="total ">
+                                            <th>
+                                                <strong>Estd. Saving's for 25 Years : </strong>
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <strong><span class="amount h4color">
+                                                     ₹<span id="MainContent_saving25Years"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <div class="btn btn-lg btn-danger bike_btn form-control input_finder">
+
+                                        1. Solar Inverter VA
+
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                        <tr class="cart-subtotal cartbrder">
+                                            <th>
+                                                <strong>Size (VA)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </strong>
+                                            </th>
+                                            <td>
+                                                <strong><span class="amount h4color">
+                                                    <span id="MainContent_Inverter_Sizing"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <div class="btn btn-lg btn-danger bike_btn form-control input_finder">
+                                        2. Solar Battery AH
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                        <tr class="cart-subtotal cartbrder">
+                                            <th>
+                                                <strong>Exide Solar Battery AH : </strong>
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <strong><span class="amount h4color">
+                                                    <span id="MainContent_required_battery_capacity"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="shipping cartbrder">
+                                            <th class="style1">
+                                                Total No. of Battery in Parallel
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <strong><span class="amount h4color">
+                                                    <span id="MainContent_No_of_batteries_Required"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="total">
+                                            <th>
+                                                Total No. of Battery in Series
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <strong><span class="amount h4color">
+                                                    <span id="MainContent_parallel_No_of_batteries_Required0"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="total">
+                                            <th>
+                                                Total No of Battery
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <strong><span class="amount h4color">
+                                                    <span id="MainContent_Total_batteries"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <div class="btn btn-lg btn-danger bike_btn form-control input_finder">
+                                        In the Absence of Solar
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                        <tr class="cart-subtotal cartbrder">
+                                            <th>
+                                                <strong>Backup hrs during<br>
+                                                    Powercuts </strong>
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span class="amount h4color">
+                                                    <span id="MainContent_extra_backup_non_solar"></span></span></strong>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="btn btn-lg btn-danger bike_btn form-control input_finder">
+                                        Solar PV Model
+
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                        <tr class="cart-subtotal cartbrder">
+                                            <th class="style1">
+                                                <strong>No. of Panels Required </strong>
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                <span id="MainContent_Size_of_Module"></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="cart-subtotal cartbrder">
+                                            <th class="style1">
+                                                Selected Solar PV Module(w)
+                                            </th>
+                                            <td class="page-header-reverse">
+                                                100
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="clear">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </center>
+    <br>
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "url": "http://www.powerwale.com/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "http://www.powerwale.com/search-g/search.aspx?q={search_term_string}",
+                "query-input": "required name=search_term_string"}
+
+        }
+    </script>
+
+    <script src="/vendor/jquery/dist/jquery.slim.min.js"></script>
+
+    <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script src="/vendor/simplebar/dist/simplebar.min.js"></script>
+
+    <script src="/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="/vendor/drift-zoom/dist/Drift.min.js"></script>
+
+    <script src="/vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+    <script src="/vendor/lg-video.js/dist/lg-video.min.js"></script>
+
+    <script src="/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+
+    <script>
+                              (function () {
+                                  var cx = '012772883059148740243:fvvzgukkhoc';
+                                  var gcse = document.createElement('script');
+                                  gcse.type = 'text/javascript';
+                                  gcse.async = true;
+                                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                                  var s = document.getElementsByTagName('script')[0];
+                                  s.parentNode.insertBefore(gcse, s);
+                              })();
+</script>
+
+
+
+    <!-- Main theme script-->
+    <!-- Main theme script-->
+
+    <script src="/js/theme.min.js"></script>
+
+
+
+
+
+
+
+</form>
+<!-- Mopinion Pastea.se  start -->
+<script type="text/javascript">(function () { var id = "tr97yrnci3n4pilgetzyeb52pn0tk8j1qus"; var js = document.createElement("script"); js.setAttribute("type", "text/javascript"); js.setAttribute("src", "//deploy.mopinion.com/js/pastease.js"); document.getElementsByTagName("head")[0].appendChild(js); var t = setInterval(function () { try { new Pastease.load(id); clearInterval(t) } catch (e) { } }, 50) })();</script>
+<!-- Mopinion Pastea.se end -->
+
+
+
+
+
+
+
+
+
+
+
+</td></tr></tbody></table></body></html>
