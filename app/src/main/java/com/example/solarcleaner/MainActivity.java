@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent=new Intent(MainActivity.this,MainActivity2.class);
+        startActivity(intent);
+        finish();
         txtEmail = findViewById(R.id.email);
         txtPassword = findViewById(R.id.password);
         progressBar=findViewById(R.id.progress);
