@@ -19,7 +19,9 @@ import android.widget.ToggleButton;
 import java.util.Locale;
 import android.os.Handler;
 
-public class MainActivity2 extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class MainActivity2 extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener  {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     ToggleButton power;
@@ -68,6 +70,8 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationview);
+        navigationView.setNavigationItemSelectedListener(this);
     }
     // Save the state of the stopwatch if it's about to be destroyed.
     @Override
@@ -128,39 +132,44 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            Log.d("Hello","Happened");
-            WebView webView = new WebView(getApplicationContext());
-            switch (item.getItemId()) {
-                case R.id.load_calculator:
-                    webView.loadUrl("file:///android_asset/load_calculator.html");
-                    setContentView(webView);
-                    Toast.makeText(getApplicationContext(), "Load Calculator", Toast.LENGTH_LONG).show();
-                    return true;
-                case R.id.solar_panel_calculator:
-                    webView.loadUrl("file:///android_asset/solar_calculator.html");
-                    setContentView(webView);
-                    Toast.makeText(getApplicationContext(), "Solar-Panel Calculator", Toast.LENGTH_LONG).show();
-                    return true;
-                case R.id.solar_panel_battery:
-                    webView.loadUrl("file:///android_asset/solar_battery.html");
-                    setContentView(webView);
-                    Toast.makeText(getApplicationContext(), "Solar-Panel Battery", Toast.LENGTH_LONG).show();
-                    return true;
-                case R.id.solar_panel_off_grid:
-                    webView.loadUrl("file:///android_asset/solar_off_grid_calculator.html");
-                    setContentView(webView);
-                    Toast.makeText(getApplicationContext(), "Solar-Panel Off-Grid Calculator", Toast.LENGTH_LONG).show();
-                    return true;
-                case R.id.logout:
-                    Toast.makeText(getApplicationContext(), "Logout success", Toast.LENGTH_LONG).show();
-                    Intent intent=new Intent(MainActivity2.this,MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                    return true;
-                default:
-                    return super.onOptionsItemSelected(item);
-            }
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Log.d("Hello","YOOOOOOOOOOOO Mihir");
+        WebView webView = new WebView(getApplicationContext());
+        switch (item.getItemId()) {
+            case R.id.load_calculator:
+                webView.loadUrl("file:///android_asset/load_calculator.html");
+                setContentView(webView);
+                Toast.makeText(getApplicationContext(), "Load Calculator", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.solar_panel_calculator:
+                webView.loadUrl("file:///android_asset/solar_calculator.html");
+                setContentView(webView);
+                Toast.makeText(getApplicationContext(), "Solar-Panel Calculator", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.solar_panel_battery:
+                webView.loadUrl("file:///android_asset/solar_battery.html");
+                setContentView(webView);
+                Toast.makeText(getApplicationContext(), "Solar-Panel Battery", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.solar_panel_off_grid:
+                webView.loadUrl("file:///android_asset/solar_off_grid_calculator.html");
+                setContentView(webView);
+                Toast.makeText(getApplicationContext(), "Solar-Panel Off-Grid Calculator", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.logout:
+                Toast.makeText(getApplicationContext(), "Logout success", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
